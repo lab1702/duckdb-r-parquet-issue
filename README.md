@@ -10,13 +10,13 @@ in the R duckdb package, the first attempt fails, but then the second attempt wo
 
 ## To Replicate
 
-This will work:
+This will work and shows the two result sets:
 
     Rscript install_144.R
     Rscript create_parquet.R
     Rscript read_parquet.R
 
-This will not work:
+This will not work and will only show the second result set:
 
     Rscript install_latest.R
     Rscript create_parquet.R
