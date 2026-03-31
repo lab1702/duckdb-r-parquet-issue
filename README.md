@@ -25,8 +25,3 @@ This will not work and will only show the second result set:
 If you have the latest DuckDB CLI installed, this will work despite it being latest version:
 
     duckdb -c "FROM 'test_data.parquet' WHERE test_date > today() - INTERVAL 7 DAY;"
-
-## Using RStudio or similar to step through the code
-
-When I use RStudio to step through the code, the second query that's saved to df2 always works
-regardless of DuckDB R package version installed even though it is the exact same query.
