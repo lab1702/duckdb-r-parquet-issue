@@ -1,0 +1,32 @@
+# DuckDB issue with parquet files after version 1.4.4
+
+When using a query like this:
+
+```sql
+FROM 'test_data.parquet' WHERE test_date > today() - INTERVAL 7 DAY;
+```
+
+in the R duckdb package, the first attempt fails, but then the second attempt works.
+
+## To Replicate
+
+This will work:
+
+    Rscript install_144.R
+    Rscript create_parquet.R
+    Rscript read_parquet.R
+
+This will not work:
+
+    Rscript install_latest.R
+    Rscript create_parquet.R
+    Rscript read_parquet.R
+
+If you have the latest DuckDB CLI installed, this will work despite it being latest version:
+
+    duckdb -c "FROM 'test_data.parquet' WHERE test_date > today() - INTERVAL 7 DAY;"
+
+## Using RStudio or similar to step through the code
+
+When I use RStudio to step through the code, the second query that's saved to df2 always works
+regardless of DuckDB R package version installed even though it is the exact same query.
