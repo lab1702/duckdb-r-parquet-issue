@@ -10,6 +10,9 @@ in the R duckdb package, the first attempt fails, but then the second attempt wo
 
 ## To Replicate
 
+**The install scripts are set up for Ubuntu 24.04 and uses the posit package manager to download
+latest binary, or a binary from a specific date.**
+
 This will work and shows the two result sets:
 
     Rscript install_144.R
