@@ -10,5 +10,8 @@ df2 <- try(dbGetQuery(con, query))
 
 dbDisconnect(con)
 
+cat("*** df1\n")
 print(df1)
+cat("*** df2\n")
 print(df2)
+cat("*** end\n")
